@@ -1,7 +1,8 @@
 # Stored-XSS Server
 1) To run server:
+setup new venv or install directly in python folder
 ```cmd
-.venv\Scripts\activate
+(optional) .venv\Scripts\activate
 pip install -r requirements.txt
 python server.py
 python attacker_server.py
