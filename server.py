@@ -5,6 +5,7 @@ from fastapi.staticfiles import StaticFiles
 import uvicorn
 import hashlib
 import secrets
+#import bleach
 
 app = FastAPI(title="XSS Vulnerable App")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -106,7 +107,7 @@ async def add_comment(request: Request, profile_username: str):
         return {"status": "error", "message": "Cannot comment"}
 
     data = await request.json()
-    text = data.get("text", "")
+    text = data.get("text", "")             #text = bleach.clean(data.get("text", ""))
     if text:
         users[profile_username]["comments"].append(text)
     return {"status": "ok"}
